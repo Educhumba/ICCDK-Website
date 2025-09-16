@@ -1,0 +1,38 @@
+/* PDFS section */
+#pdfsList table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 14px;
+}
+/* Table header */
+#pdfsList th {
+  background: var(--secondary);
+  color: var(--bg);
+  text-align: left;
+  padding: 10px;
+  margin-bottom: 1rem;
+}
+/* Table rows */
+#pdfsList td {
+  padding: 10px;
+  vertical-align: top;
+  word-break: break-word;
+}
+/* Alternating row colors */
+#pdfsList tr:nth-child(even) {
+  background: var(--muted);
+}
+#pdfsList tr:nth-child(odd) {
+  background: var(--highlight);
+}
+/* Red delete button */
+.delete-pdf {
+  background: var(--delete);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}

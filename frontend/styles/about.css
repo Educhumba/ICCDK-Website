@@ -1,0 +1,113 @@
+/* Page Heading */
+.about-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+.about-subheading {
+  text-align: center;
+  color: var(--text);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+/* Vision & Mission Cards */
+.about-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.narrow {
+  max-width: 500px;
+  flex: 1 1 400px;
+  padding: 2rem;
+  border-radius: 1rem;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.narrow h2 {
+  color: var(--deep-blue);
+  margin-bottom: 1rem;
+}
+
+/* Mandate Section */
+.mandate-card {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  padding: 0;
+  background: none;   /* remove panel background */
+  box-shadow: none;   /* remove outer shadow */
+  border: none;       /* remove outer border */
+}
+.mandate-card h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--deep-blue);
+}
+
+/* Accordion */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.accordion-item {
+  border: 1px solid var(--highlight);
+  border-radius: 1rem;
+  background: #fff; /* clean white background */
+  box-shadow: var(--shadow);
+}
+.accordion-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--deep-blue);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 1rem;
+}
+.accordion-toggle span {
+  flex-grow: 1;
+  text-align: left;
+}
+.accordion-toggle i {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+/* Different icon colors */
+.accordion-item:nth-child(1) i { color: #0077b6; } /* Advocacy - blue */
+.accordion-item:nth-child(2) i { color: #28a745; } /* Trade - green */
+.accordion-item:nth-child(3) i { color: #ff8800; } /* Capacity - orange */
+.accordion-item:nth-child(4) i { color: #e63946; } /* Halal - red */
+.accordion-item:nth-child(5) i { color: #6a4c93; } /* Dispute - purple */
+.accordion-item:nth-child(6) i { color: #17a2b8; } /* Investment - teal */
+
+.accordion-toggle .icon {
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  margin-left: auto; 
+  transition: transform 0.3s ease;
+}
+.accordion-content {
+  display: none;
+  padding: 0 1.5rem 1rem;
+  color: var(--text);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.accordion-item.active .accordion-content {
+  display: block;
+  max-height: 500px;
+  padding: 1rem 1.5rem;
+}

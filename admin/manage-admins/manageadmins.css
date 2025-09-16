@@ -1,0 +1,121 @@
+#manage-admins {
+  background: var(--section-bg);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+#manage-admins h3 {
+  margin-bottom: 16px;
+  color: var(--deep-blue);
+  text-align: center;
+}
+.admins-panel {
+  margin-bottom: 20px;
+}
+.admins-panel h4{
+    margin-bottom: 10px;
+}
+#adminsTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+#adminsTable th,
+#adminsTable td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--muted);
+}
+#adminsTable th {
+  background: var(--highlight);
+  color: var(--deep-blue);
+}
+#adminsTable tr:hover {
+  background: var(--section-bg);
+}
+.primary-btn {
+  background: var(--primary);
+  color: var(--bg);
+  border: none;
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: bold;
+}
+.primary-btn:hover {
+  background: var(--deep-blue);
+}
+#toggleAddAdmin{
+    margin-top: 4rem;
+}
+.add-admin-btn-container{
+  display: flex;
+  justify-content: center;
+}
+
+.action-btn {
+  margin-right: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.delete-btn {
+  background: var(--delete);
+  color: var(--bg);
+}
+
+.suspend-btn {
+  background: orange;
+  color: var(--bg);
+}
+
+.activate-btn {
+  background: var(--primary);
+  color: var(--bg);
+}
+
+.hidden {
+  display: none;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  width: 50%;
+}
+
+.admin-form input,
+.admin-form select {
+  padding: 10px;
+  border: 1px solid var(--muted);
+  border-radius: var(--radius);
+}
+
+#createAdminMessage {
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+#addAdminContainer {
+  margin-top: 20px;
+}
+#addAdminContainer.hidden {
+  display: none;
+}
+#addAdminContainer.show {
+  display: flex;
+  justify-content: center;
+}
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

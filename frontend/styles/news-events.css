@@ -1,0 +1,534 @@
+.page-hero {
+  text-align: center;
+  padding: 1rem;
+}
+.container h2 {
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: var(--text);
+  text-align: center;
+  font-weight: 700;
+}
+
+/* -------------------
+   EVENTS SECTION
+------------------- */
+#eventsSection {
+  background: var(--section-bg);
+  padding: 3rem 1rem;
+}
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  justify-content: center;
+}
+
+.flyer {
+  position: relative;
+  background: var(--white);
+  border-radius: 16px;
+
+  margin: 10px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 20;
+}
+.flyer:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+.flyer-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.15;
+}
+.flyer-body {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+}
+.flyer-title {
+  font-size: 1.6rem;
+  color: var(--deep-blue);
+  margin-bottom: 0.5rem;
+}
+.flyer-subheading {
+  font-style: italic;
+  color: var(--green);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+.event-details p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+.flyer .status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 0 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 3;
+  transform: translate(0, 0);
+}
+.status.upcoming {
+  background: #099815;
+  color: var(--bg);
+}
+.status.ongoing {
+  background: #ffa500;
+  color: var(--bg);
+}
+.status.past {
+  background: var(--crimson);
+  color: var(--bg);
+}
+.register-btn {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  background: var(--deep-blue);
+  color: var(--bg);
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+.register-btn:hover {
+  background: var(--primary);
+  color: var(--bg);
+}
+.btn-disabled {
+  background-color: #858585e4 !important;
+  color: var(--bg) !important;
+  cursor: not-allowed !important;
+  border: none !important;
+  opacity: 0.7;
+}
+.countdown {
+  margin: 10px 0;
+  font-weight: 500;
+  color: #e63946;
+  font-size: 1rem;
+}
+
+/* Load More Button */
+.btn.glass.shadow {
+  margin: 1.5rem auto 0;
+  display: block;
+  padding: 0.85rem 1.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--deep-blue), var(--green));
+  color: var(--secondary);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+}
+.btn.glass.shadow:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+@media (min-width: 768px) {
+  .timeline {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* -------------------
+   NEWS SECTION
+------------------- */
+#newsSection {
+  background: var(--section-bg);
+  padding: 3rem 1rem;
+  margin-top: 0;
+}
+
+#newsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem;
+  max-width: 100%;
+  margin: 2rem auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+#newsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* News card glassmorphism */
+.news-item {
+  flex: 0 0 auto;
+  width: clamp(250px, 30%, 320px);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  color: var(--bg);
+  min-width: 320px;
+}
+.news-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+}
+.news-link{
+  font-family: 'Marcellus', sans-serif;
+}
+.news-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+.news-item h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.4rem;
+  color: var(--bg);
+}
+.news-item .tiny {
+  font-size: 0.75rem;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+.news-item .content {
+  max-height: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  color: var(--text);
+  position: relative;
+  background: none !important;
+}
+.news-item.expanded {
+  width: clamp(250px, 35%, 340px);
+  transition: width 0.4s ease, max-height 0.4s ease;
+}
+
+.news-item.expanded .content {
+  max-height: 1000px;
+}
+.news-item.expanded .content::after {
+  display: none;
+}
+.news-item + .news-item {
+  margin-left: 1rem;
+}
+/* Menu (3 dots) */
+.news-menu {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--text);
+  border-radius: 50%;
+  padding: 4px 8px;
+  transition: background 0.2s ease;
+}
+
+/* Dropdown */
+.news-dropdown {
+  position: absolute;
+  top: 30px;
+  right: 8px;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  border-radius: 8px;
+  padding: 6px 10px;
+  display: none;
+  flex-direction: column;
+}
+.news-dropdown button {
+  background: none;
+  border: none;
+  color: var(--bg);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 5px;
+  text-align: left;
+}
+
+/* News Buttons */
+.read-more-btn {
+  margin-top: 0.5rem;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  color: var(--deep-blue);
+  border: 1px solid var(--deep-blue);
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  text-align: center;
+}
+.read-more-btn:hover {
+  background: var(--deep-blue);
+  color: var(--bg);
+}
+#loadMoreNews {
+  flex: 0 0 auto;
+  align-self: center;
+  margin-left: 1rem;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--deep-blue);
+  color: var(--bg);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+#loadMoreNews:hover {
+  background: var(--deep-blue);
+  transform: translateY(-2px);
+}
+/* Toast container when coping news link */
+.toast {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background: var(--primary);
+  color: var(--bg);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease-in-out;
+  z-index: 9999;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* -------------------
+   HIGHLIGHTS SECTION
+------------------- */
+#highlightsSection {
+  background: var(--section-bg);
+  padding: 3rem 1rem;
+}
+
+#highlightsSection p {
+  font-size: large;
+  padding: 6px;
+  width: 10rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--deep-blue);
+  float: right;
+  margin: 10px;
+}
+#highlightsSection p a {
+  color: var(--deep-blue);
+}
+#highlightsSection p:hover {
+  transform: scale(1.05);
+}
+.highlights-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+ #highlightsContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+#highlightsContainer::-webkit-scrollbar {
+  display: none;
+}
+.highlight-card {
+  flex: 0 0 auto;
+  width: 250px;
+  cursor: pointer;
+}
+.highlight-card figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.highlight-card:hover figure {
+  transform: scale(1.03);
+}
+.highlight-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+.highlight-card figcaption {
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text);
+  background-color: var(--bg);
+  border-top: 1px solid #ddd;
+}
+.highlight-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.641);
+  color: var(--bg);
+  border: none;
+  font-size: 2rem;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  z-index: 20;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.highlight-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+.highlight-btn.prev {
+  left: 0.5rem;
+}
+.highlight-btn.next {
+  right: 0.5rem;
+}
+@media (max-width: 768px) {
+  .highlight-card {
+    width: 180px;
+  }
+  .highlight-card img {
+    height: 130px;
+  }
+}
+/* Highlight Batch Container */
+ .highlight-batch {
+  flex: 0 0 auto;
+  width: 260px;
+  margin: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+/* Stacked Images */
+.highlight-stack {
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
+.highlight-stack img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s;
+}
+/* Stagger effect (like staircase) */
+.highlight-stack img:nth-child(1) {
+  transform: translate(0px, 0px);
+  z-index: 3;
+}
+.highlight-stack img:nth-child(2) {
+  transform: translate(9px, -9px);
+  z-index: 2;
+}
+.highlight-stack img:nth-child(3) {
+  transform: translate(18px, -18px);
+  z-index: 1;
+}
+/* Event name only */
+.highlight-title {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.highlight-title a {
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  color: var(--text-dark);
+}
+
+
+/* -------------------
+   PDFs Section Styling (Plain List)
+------------------- */
+#pdfsSection {
+  background-color: var(--section-bg);
+  padding: 60px 20px;
+  color: var(--text);
+}
+
+#pdfsContainer {
+  list-style: none; /* remove bullets */
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+#pdfsContainer li {
+  margin-bottom: 10px; /* spacing between lines */
+}
+
+#pdfsContainer a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+#pdfsContainer a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verification Code</title>
+  <link rel="shortcut icon" href="../images/fav-icon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="../images/iccdk-logo.png" alt="ICDK Logo" class="logo"/>
+      </div>
+    </div>
+  </header>
+
+  <main class="form-container">
+    <form class="auth-form">
+      <h2>Verify Code</h2>
+      <p class="form-info">We sent a verification code to your email. Enter it below.</p>
+
+      <div class="input-group">
+        <label for="code">Verification Code</label>
+        <input type="text" id="code" placeholder="Enter verification code" required>
+      </div>
+
+      <button type="submit" class="btn-primary">Confirm Code</button>
+
+      <div class="form-links">
+        <p><a href="reset-password.html">Resend Code</a></p>
+      </div>
+    </form>
+  </main>
+<!-- Toast container -->
+<div id="toast"></div>
+  <script type="module" src="script.js"></script>
+</body>
+</html>

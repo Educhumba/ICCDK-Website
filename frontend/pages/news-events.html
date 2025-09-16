@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ICCDK News & Events-Islamic Chamber of Commerce & Development Kenya</title>
+    <meta name="description" content="Stay updated with ICCDK’s latest news, upcoming events, publications, and highlights in Islamic finance, ethical business, and sustainable trade in Kenya.">
+
+    <!-- Additional SEO Meta -->
+    <meta name="keywords" content="Islamic finance Kenya, ethical business Kenya, sustainable trade Kenya, ICCDK, OIC business network, halal trade Africa, Halal certificatiom">
+    <meta name="author" content="ICCDK - Islamic Chamber of Commerce & Development Kenya">
+    <meta name="theme-color" content="#008000">
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:title" content="ICCDK News & Events | Islamic Finance & Ethical Business in Kenya">
+    <meta property="og:description" content="Explore ICCDK’s latest news, event highlights, and publications on Islamic finance, ethical business, and sustainable trade in Kenya.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.iccdk.org/news-events.html">
+    <meta property="og:image" content="https://www.iccdk.org/images/iccdk-logo.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ICCDK News & Events">
+    <meta name="twitter:description" content="Stay updated with ICCDK’s latest news, events, and publications in Kenya.">
+    <meta name="twitter:image" content="https://www.iccdk.org/images/iccdk-logo.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "ICCDK News & Events",
+      "description": "Stay updated with ICCDK’s latest news, upcoming events, publications, and highlights in Islamic finance, ethical business, and sustainable trade in Kenya.",
+      "url": "https://www.iccdk.org/news-events.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Islamic Chamber of Commerce & Development Kenya",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.iccdk.org/images/iccdk-logo.png"
+        }
+      }
+    }
+    </script>
+
+    <link rel="shortcut icon" href="../images/fav-icon.png" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/news-events.css">
+
+    <script defer src="../scripts/main.js"></script>
+    <script type="module" src="../scripts/news-event.js"></script>
+  </head>
+<body>
+<!-- Preloader -->
+<div id="preloader">
+  <div class="loader">
+    <img src="../images/fav-icon.png" alt="ICCDK Logo" class="logo" />
+    <span class="ring ring1"></span>
+    <span class="ring ring2"></span>
+    <span class="ring ring3"></span>
+  </div>
+</div>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+    <img src="../images/iccdk-logo.png" alt="ICDK Logo" class="logo"/>
+    </div>
+    <button class="nav-toggle" aria-label="Open Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    <nav class="site-nav" aria-label="Primary">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="membership.html">Membership</a>
+      <a href="services.html">Services</a>
+      <a href="news-events.html">News & Events</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+    <!-- User Menu -->
+    <section class="user-menu" id="userMenu">
+    <!-- Not logged in (default) -->
+    <div id="guestMenu" class="guest-menu">
+        <a href="../login/login.html" class="btn-login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+    </div>
+    <!-- Logged in menu -->
+    <div id="authMenu" class="auth-menu hidden">
+        <div class="profile-toggle" id="profileToggle">
+        <i class="fa-solid fa-user-circle profile-icon"></i>
+        <span id="userName">User</span>
+        <i class="fa-solid fa-chevron-down dropdown-icon" id="dropdownIcon"></i>
+        </div>
+        <ul class="dropdown hidden" id="profileDropdown">
+        <!-- <li><a href="profile.html"><i class="fa-solid fa-id-badge"></i> My Profile</a></li> -->
+        <li><a href="../pages/myevents.html"><i class="fa-solid fa-calendar-check"></i> My Events</a></li>
+        <li><a id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+        </ul>
+    </div>
+    </section>
+
+    <main class="page">
+      <section class="page-hero small">
+        <div class="page-hero-bg"></div>
+        <div class="container"><h1>News & Events</h1><p>Stay informed about our activities and opportunities.</p></div>
+      </section>
+
+      <section class="container">
+        <h2>Events Calendar</h2>
+        <ul class="timeline" id="eventsList"></ul>
+      </section>
+
+      <section class="container" id="newsSection">
+        <h2>ICCDK News</h2>
+        <div id="newsContainer" class="newsContainer">
+        </div>
+        <button id="loadMoreNews" class="btn glass shadow" style="display:none;">More News</button>
+      </section>
+
+      <section class="container" id="highlightsSection"> 
+        <h2>Event Highlights</h2>
+        <div class="highlights-wrapper">
+          <button class="highlight-btn prev">&#10094;</button>
+          <div id="highlightsContainer" class="gallery">
+            <!-- JS will inject highlight images here -->
+          </div>
+          <button class="highlight-btn next">&#10095;</button>
+        </div>
+        <p class="note">
+        <a href="https://www.shutterstock.com/images" target="_blank">View full gallery</a> <!--This is the overall drive link that holds all events images-->
+        </p>
+      </section>
+
+      <section class="container" id="pdfsSection">
+        <h2>Publications</h2>
+        <ul id="pdfsContainer">
+          <!-- JS will inject PDFs here -->
+        </ul>
+      </section>
+
+    </main>
+    <footer class="site-footer">
+  <div class="container grid-3">
+    <div>
+      <h4>ICCDK</h4>
+      <p>Ethical commerce for a better tomorrow.</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <ul class="list-unstyled">
+        <li><a href="membership.html">Become a Member</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="news-events.html">Upcoming Events</a></li>
+        <li><a href="home.html">Home page</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+  <p class="copyright">© <span id="year"></span> Islamic Chamber of Commerce & Development Kenya.</p>
+</footer>
+  </body>
+</html>

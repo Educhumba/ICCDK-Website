@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - ICCDK</title>
+  <link rel="shortcut icon" href="../images/fav-icon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="../images/iccdk-logo.png" alt="ICDK Logo" class="logo"/>
+      </div>
+    </div>
+  </header>
+
+  <main class="form-container">
+  <!-- Signup Form -->
+  <form class="auth-form" id="signupForm">
+    <h2>Sign Up</h2>
+
+    <div class="input-group">
+      <label for="orgName">Organization Name</label>
+      <input type="text" id="orgName" placeholder="Enter organization name" required>
+    </div>
+
+    <div class="input-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+    </div>
+
+    <div class="input-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="Enter your phone number" required>
+    </div>
+
+    <div class="input-group password-field">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+      <i class="fa-solid fa-eye toggle-password" data-target="password"></i>
+    </div>
+
+    <div class="input-group password-field">
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+      <i class="fa-solid fa-eye toggle-password" data-target="confirmPassword"></i>
+    </div>
+
+    <button type="submit" class="btn-primary">Sign Up</button>
+
+    <div class="form-links">
+      <p>Already have an account? <a href="../login/login.html">Login</a></p>
+    </div>
+  </form>
+
+  <!-- Email Verification Form (hidden by default) -->
+  <form class="auth-form hidden" id="verifyForm">
+    <h2>Email Verification</h2>
+    <p>Please enter the verification code sent to your email.</p>
+
+    <div class="input-group">
+      <label for="verificationCode">Verification Code</label>
+      <input type="text" id="verificationCode" placeholder="Enter code" required>
+    </div>
+
+    <button type="submit" class="btn-primary">Complete Registration</button>
+  </form>
+</main>
+
+<!-- Toast container -->
+<div id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

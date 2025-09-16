@@ -1,0 +1,72 @@
+#registrationsList {
+  margin-top: 20px;
+}
+
+.event-group {
+  border: 1px solid #ddd;
+  background: #fafafa;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.event-group h4 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.event-group ul {
+  list-style: none;
+  padding: 0;
+}
+
+.event-group li {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.btn-export {
+  background: #0095ff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.btn-export:hover {
+  background: #007acc;
+}
+.filter-controls {
+  margin: 10px 0;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.filter-controls label {
+  font-weight: bold;
+}
+
+.event-group {
+  margin-bottom: 30px;
+}
+
+.registrations-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.registrations-table th,
+.registrations-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.registrations-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}

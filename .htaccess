@@ -1,0 +1,9 @@
+# Disable directory listing
+Options -Indexes
+
+# Pretty URLs: map /about -> /about.html (and similar)
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]

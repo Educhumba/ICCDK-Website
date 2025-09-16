@@ -1,0 +1,120 @@
+.services-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.services-header h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.services-header p {
+  color: var(--text);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Accordion Container */
+.services-accordion .accordion-item {
+  background: var(--panel);
+  border: 1px solid var(--highlight);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  margin: 2rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.services-accordion .accordion-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--deep-blue);
+}
+
+/* Accordion Header */
+.services-accordion .accordion-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--deep-blue);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  gap: 1rem;
+}
+.services-accordion .accordion-toggle span {
+  flex-grow: 1; 
+  text-align: left;
+}
+
+/* Icons inside toggle */
+.services-accordion .accordion-toggle i {
+  font-size: 2rem;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.services-accordion .accordion-toggle .icon {
+  flex-grow: 0;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+/* Accordion Content */
+.services-accordion .accordion-content {
+  display: none;
+  padding: 0 1.5rem 1rem;
+  color: var(--text);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.services-accordion .accordion-item.active .accordion-content {
+  display: block;
+  max-height: 500px;
+  padding: 1rem 1.5rem;
+}
+
+/* Unique Colors for Each Service */
+.services-accordion .halal i {
+  color: #ff8800; 
+}
+.services-accordion .trade i {
+  color: #007bff;
+}
+.services-accordion .advisory i {
+  color: #ffc107; 
+}
+.services-accordion .investment i {
+  color: #e83e8c;
+}
+.services-accordion .training i {
+  color: #17a2b8;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .services-section {
+    margin: 10px;
+  }
+  .services-accordion .accordion-toggle {
+    font-size: 1rem;
+  }
+  .services-accordion .accordion-toggle i {
+    font-size: 1.5rem;
+  }
+}

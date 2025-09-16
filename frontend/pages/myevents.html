@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ICCDK My Events</title>
+    <link rel="shortcut icon" href="../images/fav-icon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/my-events.css" />
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="loader">
+        <img src="../images/fav-icon.png" alt="ICCDK Logo" class="logo" />
+        <span class="ring ring1"></span>
+        <span class="ring ring2"></span>
+        <span class="ring ring3"></span>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="brand">
+          <img src="../images/iccdk-logo.png" alt="ICDK Logo" class="logo"/>
+        </div>
+        <button class="nav-toggle" aria-label="Open Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="home.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="membership.html">Membership</a>
+          <a href="services.html">Services</a>
+          <a href="news-events.html">News & Events</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- User Menu -->
+    <section class="user-menu" id="userMenu">
+    <!-- Not logged in (default) -->
+    <div id="guestMenu" class="guest-menu">
+        <a href="../login/login.html" class="btn-login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+    </div>
+    <!-- Logged in menu -->
+    <div id="authMenu" class="auth-menu hidden">
+        <div class="profile-toggle" id="profileToggle">
+        <i class="fa-solid fa-user-circle profile-icon"></i>
+        <span id="userName">User</span>
+        <i class="fa-solid fa-chevron-down dropdown-icon" id="dropdownIcon"></i>
+        </div>
+        <ul class="dropdown hidden" id="profileDropdown">
+        <!-- <li><a href="profile.html"><i class="fa-solid fa-id-badge"></i> My Profile</a></li> -->
+        <li><a href="../pages/myevents.html"><i class="fa-solid fa-calendar-check"></i> My Events</a></li>
+        <li><a id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+        </ul>
+    </div>
+    </section>
+
+    <!-- Main -->
+    <main>
+      <section class="my-events-section">
+        <div class="container">
+          <h1>My Registered Events</h1>
+          <p class="subhead">Here are the events you have signed up for.</p>
+
+          <div id="myEventsList" class="events-grid">
+            <!-- Events will be dynamically injected by my-events.js -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container grid-3">
+        <div>
+          <h4>ICCDK</h4>
+          <p>Ethical commerce for a better tomorrow.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="list-unstyled">
+            <li><a href="membership.html">Become a Member</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="news-events.html">Upcoming Events</a></li>
+            <li><a href="home.html">Home page</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="socials">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <p class="copyright">© <span id="year"></span> Islamic Chamber of Commerce & Development Kenya.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="../scripts/my-events.js"></script>
+    <script src="../scripts/main.js"></script>
+  </body>
+</html>

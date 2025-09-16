@@ -1,0 +1,263 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="shortcut icon" href="../frontend/images/fav-icon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="../frontend/images/iccdk-logo.png" alt="ICCDK Logo" class="logo"/>
+    </div>
+
+
+    <div class="header-left">
+      <button data-tab="manage-admins" class="header-btn" id="headerManageAdminsBtn">
+        Manage Admins
+      </button>
+    </div>
+
+    <div class="header-right" style="display:flex; align-items:center; gap:12px;">
+
+      <div id="adminProfile" class="admin-profile" style="display:flex; align-items:center; gap:10px; margin-right:12px;">
+        <img id="adminAvatar" src="../frontend/images/default-avatar.png" alt="Profile" style="width:36px; height:36px; border-radius:50%; object-fit:cover;">
+        <div id="adminName" style="font-weight:600; color:var(--deep-blue)">Admin</div>
+        <button id="adminDropdownBtn" class="menu-btn" title="Account actions"><i class="fa fa-caret-down"></i></button>
+        <div id="adminDropdown" class="admin-dropdown hidden" style="position:absolute; right:20px; top:70px; background:var(--bg); border-radius:8px; box-shadow:var(--shadow); padding:8px;">
+          <button id="logoutBtn" style="background:none;border:none;padding:8px;cursor:pointer;width:100%;text-align:left;">Logout</button>
+          <button id="changePasswordBtn" style="background:none;border:none;padding:8px;cursor:pointer;width:100%;text-align:left;">Change Password</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <main class="main-content">
+    </main>
+  </div>
+  <script src="script.js"></script>
+  <script src="applications.js"></script>
+  <script src="feedbacks.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="shortcut icon" href="../admin/images/fav-icon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../admin/applications/applications.css">
+  <link rel="stylesheet" href="../admin/feedbacks/feedbacks.css">
+  <link rel="stylesheet" href="../admin/Events/events.css">
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="../admin/images/iccdk-logo.png" alt="ICCDK Logo" class="logo"/>
+    </div>
+    <button class="menu-btn"></button>
+    <div id="menu-toggle" class="header-actions">
+      <button data-tab="feedback" class="header-btn">
+        Feedback <span id="headerFeedbackCounter" class="badge header-badge">0</span>
+      </button>
+      <button data-tab="applications" class="header-btn">
+        Applications <span id="headerApplicationsCounter" class="badge header-badge">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Admin Panel</h2>
+      <nav>
+        <ul>
+          <li data-tab="add-event" class="active">Add Event</li>
+          <li data-tab="view-events">View Events</li>
+          <li data-tab="publish-news">Publish News</li>
+          <li data-tab="view-news">View News</li>
+          <li data-tab="upload-pdf">Upload PDFs</li>
+          <li data-tab="view-pdfs">View PDFs</li>
+          <li data-tab="upload-highlights">Upload Highlights</li>
+          <li data-tab="view-highlights">View Highlights</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Add Event -->
+      <section id="add-event" class="tab-section active">
+        <h3>Add Event</h3>
+        <form id="addEventForm">
+          <input type="text" name="title" placeholder="Event Title" required />
+          <input type="date" name="date" required />
+          <input type="time" name="time" required />
+          <input type="text" name="location" placeholder="Location/Venue" required />
+          <button type="submit">Add Event</button>
+        </form>
+      </section>
+
+      <!-- View Events -->
+      <section id="view-events" class="tab-section">
+        <h3>View Events</h3>
+        <div class="event-filters">
+          <button data-filter="all" class="active">All</button>
+          <button data-filter="upcoming">Upcoming</button>
+          <button data-filter="ongoing">Ongoing</button>
+          <button data-filter="past">Past</button>
+        </div>
+        <div id="eventsList" class="items-list"></div>
+      </section>
+      <!-- Edit Event Modal -->
+      <div id="editEventModal" class="modal hidden">
+        <div class="modal-content">
+          <button type="button" class="close-btn" id="closeEditEvent">✕</button>
+          <h4>Edit Event</h4>
+          <form id="editEventForm">
+            <input type="hidden" name="id" />
+            <label>Title<input type="text" name="title" required /></label>
+            <label>Date<input type="date" name="date" required /></label>
+            <label>Time<input type="time" name="time" required /></label>
+            <label>Location<input type="text" name="location" required /></label>
+            <div class="actions">
+              <button type="submit">Save Changes</button>
+            </div>
+            <div id="editEventMessage" style="margin-top:8px;"></div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Publish News -->
+      <section id="publish-news" class="tab-section">
+        <h3>Publish News</h3>
+        <form id="publishNewsForm" enctype="multipart/form-data">
+          <input type="text" name="title" placeholder="News Title" required />
+          <textarea name="content" placeholder="News Content" rows="6" required></textarea>
+          <input type="text" name="author" placeholder="Author Name" />
+          <input type="date" name="date" />
+          <input type="file" name="image" accept="image/*" />
+          <button type="submit">Publish News</button>
+        </form>
+        <div id="publishNewsMessage"></div>
+      </section>
+      
+      <!-- View News -->
+      <section id="view-news" class="tab-section">
+        <h3>View News</h3>
+        <div id="newsList" class="items-list"></div>
+      </section>
+      <!-- edit news modal -->
+      <div id="editNewsModal" class="modal hidden">
+        <div class="modal-content">
+          <button type="button" class="close-btn" id="closeEditModal">✕</button>
+          <h3>Edit News</h3>
+          <form id="editNewsForm" enctype="multipart/form-data">
+            <input type="hidden" name="id" id="editNewsId" />
+            <input type="text" name="title" id="editNewsTitle" placeholder="Title" required />
+            <textarea name="content" id="editNewsContent" rows="6" required></textarea>
+            <input type="text" name="author" id="editNewsAuthor" placeholder="Author" />
+            <input type="date" name="date" id="editNewsDate" />
+            <input type="file" name="image" id="editNewsImage" accept="image/*" />
+            <button type="submit">Update News</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Upload PDFs -->
+      <section id="upload-pdf" class="tab-section">
+        <h3>Upload PDFs</h3>
+        <form id="uploadPdfForm" enctype="multipart/form-data">
+          <input type="text" name="title" placeholder="Enter PDF title" required />
+          <textarea name="description" placeholder="Enter description (optional)"></textarea>
+          <input type="file" name="pdfFile" accept=".pdf" required />
+          <button type="submit">Upload PDF</button>
+        </form>
+      </section>
+
+      <!-- View PDFs -->
+      <section id="view-pdfs" class="tab-section">
+        <h3>Uploaded PDFs</h3>
+        <div id="pdfsList" class="items-list"></div>
+      </section>
+
+      <!-- Upload Highlights -->
+      <section id="upload-highlights" class="tab-section">
+        <h3>Upload Event Highlights</h3>
+        <form id="uploadHighlightForm" enctype="multipart/form-data">
+          <!-- Event-level inputs -->
+          <input type="text" name="eventName" placeholder="Enter event name" required />
+          <input type="url" name="eventLink" placeholder="Enter Drive folder link" required />
+
+          <!-- Container for multiple highlight inputs -->
+          <div id="highlightInputs">
+            <div class="highlight-item">
+              <input type="text" name="imageTitle" placeholder="Enter image title" required />
+              <input type="file" name="highlightImages" accept="image/*" required />
+            </div>
+          </div>
+          <button type="button" id="addHighlightBtn">+ Add Another Highlight</button>
+          <br><br>
+          <button type="submit">Upload Highlights</button>
+        </form>
+        <p class="note">
+          Only upload a few highlight images here.  
+          Full gallery should be uploaded to external drive.  
+        </p>
+        <div id="uploadHighlightMessage"></div>
+      </section>
+
+      <!-- View Highlights -->
+      <section id="view-highlights" class="tab-section">
+        <h3>Running Highlights</h3>
+        <div id="highlightsList" class="items-list"></div>
+      </section>
+
+      <!-- Feedback -->
+      <section id="feedback" class="tab-section">
+        <h3>Feedback Messages</h3>
+        <div id="feedbackList" class="items-list"></div>
+      </section>
+
+      <!-- Applications -->
+      <section id="applications" class="tab-section">
+        <h3>User Applications</h3>
+        <div id="applicationsList" class="items-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div id="eventModal" class="modal hidden">
+    <div class="modal-content animated">
+      <button class="close-btn">✕</button>
+      <h4>Upcoming Event</h4>
+      <p id="modalEventDetails"></p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="../admin/applications/applications.js"></script>
+  <script src="../admin/feedbacks/feedbacks.js"></script>
+  <script src="../admin/Events/events.js"></script>
+</body>
+</html>  

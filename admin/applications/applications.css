@@ -1,0 +1,68 @@
+/* Applications list container */
+#applicationsList {
+  display: block;
+  overflow-x: auto;  
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  white-space: nowrap; /* keeps columns in line */
+  margin: 0;
+  padding: 0;
+}
+/* Header row */
+.applications-header {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1.2fr 1.5fr 1.2fr 1.2fr 1.2fr 1fr 1fr 2fr 1fr 1.5fr;
+  background: var(--secondary);
+  font-weight: bold;
+  padding: 8px 10px;
+  border-bottom: 2px solid var(--highlight);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin-bottom: 0.5rem;
+}
+/* Each application row */
+.application-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1.2fr 1.5fr 1.2fr 1.2fr 1.2fr 1fr 1fr 2fr 1fr 1.5fr;
+  padding: 8px 10px;
+  min-height: 30px;
+  align-items: start;
+  margin: 0;
+  border: none;
+  line-height: 1.4;
+}
+/* Alternating row colors */
+.application-row:nth-child(even) {
+  background: var(--muted);
+}
+.application-row:nth-child(odd) {
+  background: var(--highlight);
+}
+/* Each cell */
+.application-row p,
+.applications-header div {
+  margin: 0;
+  padding: 0 8px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+/* Actions column */
+.application-row .actions {
+  display: flex;
+  gap: 6px;
+}
+.application-row .actions button {
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #f9f9f9;
+  cursor: pointer;
+}
+.application-row .actions button:hover {
+  background: #eee;
+}

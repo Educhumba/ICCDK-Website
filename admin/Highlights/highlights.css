@@ -1,0 +1,182 @@
+/* ===== Highlights Table ===== */
+.highlights-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  table-layout: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Table Head */
+.highlights-table th {
+  padding: 12px 15px;
+  background-color: var(--secondary);
+  color: var(--bg);
+  font-weight: 600;
+  font-size: 15px;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+
+/* Table Rows */
+.highlights-table tr:nth-child(even) {
+  background: var(--muted);
+}
+
+.highlights-table tr:nth-child(odd) {
+  background: var(--highlight);
+}
+
+.highlights-table td {
+  padding: 12px 10px;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--section-bg);
+  word-wrap: break-word;
+  max-width: 400px;
+}
+
+/* Image Column */
+.highlights-table img {
+  max-width: 120px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Delete Button */
+.highlights-table .delete-highlight {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  background-color: var(--delete);
+  color: var(--bg);
+}
+
+.highlights-table .delete-highlight:hover {
+  background-color: var(--delete);
+  transform: scale(1.05);
+}
+
+/* ===== Batch Card Layout ===== */
+.highlight-batch-card {
+  border: 1px solid var(--highlight);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin: 18px 0;
+  background: var(--bg);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.highlight-batch-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Batch Header */
+.batch-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.batch-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--deep-blue);
+}
+
+.batch-header a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.batch-header a:hover {
+  color: var(--deep-blue);
+}
+
+.batch-header small {
+  display: block;
+  opacity: 0.7;
+  font-size: 0.85rem;
+}
+
+/* Batch Grid */
+.batch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+/* Individual Image Item */
+.image-item {
+  border: 1px solid var(--muted);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.image-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.image-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Image Meta Info */
+.image-item .meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  gap: 6px;
+}
+
+.image-item .title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* Action Buttons inside image items */
+.image-item .delete-highlight {
+  font-size: 0.85rem;
+  gap: 4px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background-color: var(--delete);
+  color: var(--bg);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.image-item .delete-highlight:hover {
+  filter: brightness(0.95);
+  transform: scale(1.05);
+}

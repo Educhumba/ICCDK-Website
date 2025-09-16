@@ -1,0 +1,120 @@
+.my-events-section {
+  padding: 4rem 2rem;
+  background: var(--section-bg);
+  min-height: 80vh;
+}
+
+.my-events-section h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--deep-blue);
+  margin-bottom: 0.5rem;
+}
+
+.my-events-section .subhead {
+  text-align: center;
+  color: var(--text);
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+ .event-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.event-card:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+.event-card .actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.event-card button {
+  margin-top: 1rem;
+  margin-right: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.2s;
+  color: #fff;
+}
+.event-card button:disabled {
+  background: #ccc;
+   color: #666;
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+.btn-cancel {
+  background: crimson;
+}
+.btn-cancel:hover:not(:disabled) {
+  background: darkred;
+  transform: translateY(-2px);
+}
+.btn-absent {
+  background: orange;
+}
+.btn-absent:hover:not(:disabled) {
+  background: darkorange;
+  transform: translateY(-2px);
+}
+
+.event-card h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.event-card p {
+  color: var(--text);
+  margin: 0.3rem 0;
+}
+
+/* Toast (reused from your sample) */
+.toast {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--deep-blue);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 9999;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.toast.success {
+  background: var(--secondary);
+}
+.toast.error {
+  background: crimson;
+}

@@ -1,0 +1,73 @@
+#manage-members {
+  background: var(--section-bg);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+#manage-members h3 {
+  margin-bottom: 16px;
+  color: var(--deep-blue);
+  text-align: center;
+}
+
+.members-panel {
+  margin-bottom: 20px;
+}
+
+.members-panel h4 {
+  margin-bottom: 10px;
+}
+
+#membersTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+#membersTable th,
+#membersTable td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--muted);
+}
+
+#membersTable th {
+  background: var(--highlight);
+  color: var(--deep-blue);
+}
+
+#membersTable tr:hover {
+  background: var(--section-bg);
+}
+
+/* Action buttons */
+.action-btn {
+  margin-right: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.edit-btn {
+  background: var(--secondary);
+  color: var(--bg);
+}
+.edit-btn:hover{
+  background: var(--deep-blue);
+}
+
+.delete-btn {
+  background: var(--delete);
+  color: var(--bg);
+}
+
+/* Hidden utility */
+.hidden {
+  display: none;
+}

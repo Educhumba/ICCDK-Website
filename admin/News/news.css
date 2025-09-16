@@ -1,0 +1,80 @@
+/* News List Container */
+#newsList {
+  display: block;
+  overflow-x: auto;   /* allow scroll if too wide */
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+/* Header row */
+.news-header {
+  display: grid;
+  grid-template-columns: 1.5fr 4fr 1fr 1.2fr 1.5fr 1fr;
+  background: var(--secondary);
+  color: var(--bg);
+  font-weight: bold;
+  padding: 8px 10px;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--highlight);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+/* Each row */
+.news-row {
+  display: grid;
+  grid-template-columns: 1.5fr 4fr 1fr 1.2fr 1.5fr 1fr;
+  padding: 8px 10px;
+  align-items: start;
+  margin: 0;
+  line-height: 1.4;
+}
+/* Alternating row colors */
+.news-row:nth-child(even) {
+  background: var(--muted);
+}
+.news-row:nth-child(odd) {
+  background: var(--highlight);
+}
+/* Cells */
+.news-row p,
+.news-header div {
+  margin: 0;
+  padding: 0 8px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+/* Thumbnail */
+.news-row img {
+  max-width: 60px;
+  border-radius: 4px;
+}
+/* Actions */
+.news-row .admin-actions {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.news-row .admin-actions button {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--bg);
+  font-size: 13px;
+  min-width: 60px;
+}
+.news-row .admin-actions .edit-news {
+  background: var(--secondary);
+  color: var(--bg);
+}
+.news-row .admin-actions .edit-news:hover{
+  background: var(--deep-blue);
+}
+.news-row .admin-actions .delete-news {
+  background: var(--delete);
+}

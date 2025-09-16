@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admins</title>
+  <link rel="shortcut icon" href="../images/fav-icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="manageadmins.css">
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="../images/iccdk-logo.png" alt="ICCDK Logo" class="logo"/>
+    </div>
+    <div class="header-right">
+      <div id="adminMenu" class="auth-menu">
+        <div class="profile-toggle" id="adminToggle">
+          <i class="fas fa-user-circle profile-icon"></i>
+          <span id="adminName">Admin Name</span>
+          <i class="fas fa-chevron-down dropdown-icon" id="adminDropdownIcon"></i>
+        </div>
+        <ul class="dropdown hidden" id="adminDropdown">
+          <li><a id="logoutBtn"><i class="fas fa-right-from-bracket"></i> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>Admin Panel</h2>
+    <nav>
+      <ul>
+        <li><a href="../Stats/stats.html"><i class="fas fa-chart-line"></i> Stats</a></li>
+        <li data-role="super_admin"><a href="../manage-admins/manageadmins.html"><i class="fas fa-user-shield"></i> Manage Admins</a></li>
+        <li data-role="super_admin"><a href="../members/members.html"><i class="fas fa-users"></i> Members</a></li>
+
+        <li data-role="super_admin, event_admin" class="parent">
+          <span><i class="fas fa-calendar-alt"></i> Events <i class="fas fa-chevron-down"></i></span>
+          <ul class="submenu">
+            <li><a href="../Events/events.html#add-event"><i class="fas fa-plus-circle"></i> Add Event</a></li>
+            <li><a href="../Events/events.html#view-events"><i class="fa-solid fa-eye"></i> View Events</a></li>
+          </ul>
+        </li>
+
+        <li data-role="super_admin, content_admin" class="parent">
+          <span><i class="fas fa-newspaper"></i> News <i class="fas fa-chevron-down"></i></span>
+          <ul class="submenu">
+            <li><a href="../News/news.html#publish-news"><i class="fa-solid fa-notes-medical"></i> Publish News</a></li>
+            <li><a href="../News/news.html#view-news"><i class="fas fa-eye"></i> View News</a></li>
+          </ul>
+        </li>
+
+        <li data-role="super_admin, content_admin" class="parent">
+          <span><i class="fa-solid fa-file-pdf"></i> PDFs <i class="fas fa-chevron-down"></i></span>
+          <ul class="submenu">
+            <li><a href="../PDFs/pdfs.html#upload-pdf"><i class="fa-solid fa-cloud-arrow-up"></i> Upload PDFs</a></li>
+            <li><a href="../PDFs/pdfs.html#view-pdfs"><i class="fa-solid fa-eye"></i> View PDFs</a></li>
+          </ul>
+        </li>
+
+        <li data-role="super_admin, content_admin" class="parent">
+          <span><i class="fa-solid fa-star"></i> Highlights <i class="fas fa-chevron-down"></i></span>
+          <ul class="submenu">
+            <li><a href="../Highlights/highlights.html#upload-highlights"><i class="fa-regular fa-images"></i> Add Highlight</a></li>
+            <li><a href="../Highlights/highlights.html#view-highlights"><i class="fa-solid fa-eye"></i> View Highlights</a></li>
+          </ul>
+        </li>
+
+        <li data-role="super_admin, moderator"><a href="../feedbacks/feedbacks.html"><i class="fa-solid fa-envelope"></i> Feedbacks <span id="headerFeedbackCounter" class="badge">0</span></a></li>
+        <li data-role="super_admin, moderator"><a href="../applications/applications.html"><i class="fa-solid fa-list"></i> Applications <span id="headerApplicationsCounter" class="badge">0</span></a></li>
+        <li data-role="super_admin, event_admin"><a href="../Event-Registrations/eventregistrations.html"><i class="fa-solid fa-clipboard-check"></i> Event Registrations</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+<!-- Manage Admins -->
+<section id="manage-admins" class="tab-section">
+  <h3>Manage Admins</h3>
+
+  <!-- Admins List -->
+  <div class="admins-panel">
+    <h4>Existing Admins</h4>
+    <table id="adminsTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="adminsList">
+        <tr><td colspan="5">Loading admins...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Toggle Add Admin Form -->
+<div class="add-admin-btn-container">
+  <button id="toggleAddAdmin" class="primary-btn"><i class="fa-solid fa-user-plus"></i> Add Admin</button>
+</div>
+
+  <!-- Create Admin Form (hidden by default) -->
+  <div id="addAdminContainer" class="hidden">
+    <form id="createAdminForm" class="admin-form">
+      <input type="text" name="name" placeholder="Full name" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <select name="role">
+        <option value="moderator">Moderator</option>
+        <option value="event_admin">Event Admin</option>
+        <option value="content_admin">Content Admin</option>
+        <option value="super_admin">Super Admin</option>
+      </select>
+      <button type="submit" class="primary-btn">Create Admin</button>
+    </form>
+    <div id="createAdminMessage"></div>
+  </div>
+</section>
+
+  
+</div>
+<script src="manageadmins.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>

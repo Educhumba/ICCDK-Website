@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ICCDK - Event Highlights</title>
+  <link rel="shortcut icon" href="../images/fav-icon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="../styles/news-events.css">
+  <link rel="stylesheet" href="../styles/event-highlight.css">
+</head>
+<body>
+
+  <!-- Main container -->
+  <section class="event-highlight-container">
+    <div class="event-highlight-header">
+      <h1 id="eventTitle">Loading...</h1>
+      <p id="eventDate"></p>
+      <button class="share-btn">
+        <i class="fa-solid fa-share-nodes"></i> Share Event
+      </button>
+    </div>
+
+    <div class="highlight-gallery" id="highlightGallery">
+      <p>Loading highlights...</p>
+    </div>
+
+    <!-- Drive Links -->
+    <div class="extra-links">
+      <p>
+        <a id="eventDriveLink" href="#" target="_blank">
+          View all photos and videos about this event
+        </a>
+      </p>
+      <p>
+        <a href="https://www.shutterstock.com/images" target="_blank">
+          View full gallery (All Events)
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Toast -->
+  <div id="toast" class="toast">Link copied to clipboard!</div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container grid-3">
+      <div>
+        <h4>ICCDK</h4>
+        <p>Ethical commerce for a better tomorrow.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="list-unstyled">
+          <li><a href="membership.html">Become a Member</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="news-events.html">Upcoming Events</a></li>
+          <li><a href="home.html">Home page</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="socials">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">© <span id="year"></span> Islamic Chamber of Commerce & Development Kenya.</p>
+  </footer>
+
+  <!-- Script -->
+  <script type="module" src="../scripts/event-highlight.js"></script>
+</body>
+</html>

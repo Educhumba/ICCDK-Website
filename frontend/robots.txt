@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /backend/
+Disallow: /admin/
+Disallow: /*?*
+Allow: /
+Crawl-delay: 10
+
+Sitemap: https://www.iccdk.org/sitemap.xml

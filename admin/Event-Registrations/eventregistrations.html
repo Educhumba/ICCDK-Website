@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event-registrations</title>
+  <link rel="shortcut icon" href="../images/fav-icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="eventregistration.css">
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="../images/iccdk-logo.png" alt="ICCDK Logo" class="logo"/>
+    </div>
+    <div class="header-right">
+      <div id="adminMenu" class="auth-menu">
+        <div class="profile-toggle" id="adminToggle">
+          <i class="fas fa-user-circle profile-icon"></i>
+          <span id="adminName">Admin Name</span>
+          <i class="fas fa-chevron-down dropdown-icon" id="adminDropdownIcon"></i>
+        </div>
+        <ul class="dropdown hidden" id="adminDropdown">
+          <li><a id="logoutBtn"><i class="fas fa-right-from-bracket"></i> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h2>Admin Panel</h2>
+    <nav>
+      <ul>
+        <li><a href="../Stats/stats.html"><i class="fas fa-chart-line"></i> Stats</a></li>
+        <li data-role="super_admin"><a href="../manage-admins/manageadmins.html"><i class="fas fa-user-shield"></i> Manage Admins</a></li>
+        <li data-role="super_admin"><a href="../members/members.html"><i class="fas fa-users"></i> Members</a></li>
+
+        <li data-role="super_admin, event_admin" class="parent">
+          <span><i class="fas fa-calendar-alt"></i> Events <i class="fas fa-chevron-down"></i></span>
+          <ul class="submenu">
+            <li><a href="../Events/events.html#add-event"><i class="fas fa-plus-circle"></i> Add Event</a></li>
+            <li><a href="../Events/events.html#view-events"><i class="fa-solid fa-eye"></i> View Events</a></li>
+          </ul>
+        </li>
+
+        <li data-role="super_admin, content_admin" class="parent">
+          <span><i class="fas fa-newspaper"></i> News <i class="fas fa-chevron-down"></i></span>
+          <ul class="submenu">
+            <li><a href="../News/news.html#publish-news"><i class="fa-solid fa-notes-medical"></i> Publish News</a></li>
+            <li><a href="../News/news.html#view-news"><i class="fas fa-eye"></i> View News</a></li>
+          </ul>
+        </li>
+
+        <li data-role="super_admin, content_admin" class="parent">
+          <span><i class="fa-solid fa-file-pdf"></i> PDFs <i class="fas fa-chevron-down"></i></span>
+          <ul class="submenu">
+            <li><a href="../PDFs/pdfs.html#upload-pdf"><i class="fa-solid fa-cloud-arrow-up"></i> Upload PDFs</a></li>
+            <li><a href="../PDFs/pdfs.html#view-pdfs"><i class="fa-solid fa-eye"></i> View PDFs</a></li>
+          </ul>
+        </li>
+
+        <li data-role="super_admin, content_admin" class="parent">
+          <span><i class="fa-solid fa-star"></i> Highlights <i class="fas fa-chevron-down"></i></span>
+          <ul class="submenu">
+            <li><a href="../Highlights/highlights.html#upload-highlights"><i class="fa-regular fa-images"></i> Add Highlight</a></li>
+            <li><a href="../Highlights/highlights.html#view-highlights"><i class="fa-solid fa-eye"></i> View Highlights</a></li>
+          </ul>
+        </li>
+
+        <li data-role="super_admin, moderator"><a href="../feedbacks/feedbacks.html"><i class="fa-solid fa-envelope"></i> Feedbacks <span id="headerFeedbackCounter" class="badge">0</span></a></li>
+        <li data-role="super_admin, moderator"><a href="../applications/applications.html"><i class="fa-solid fa-list"></i> Applications <span id="headerApplicationsCounter" class="badge">0</span></a></li>
+        <li data-role="super_admin, event_admin"><a href="../Event-Registrations/eventregistrations.html"><i class="fa-solid fa-clipboard-check"></i> Event Registrations</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+      <!-- Event Registrations -->
+      <section id="event-registrations" class="tab-section">
+        <h3>Event Registrations</h3>
+        <div id="registrationsList" class="items-list">Loading registrations...</div>
+      </section>
+  
+</div>
+<script src="eventregistration.js"></script>
+<script src="../script.js"></script>
+</body>
+</html>
