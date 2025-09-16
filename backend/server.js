@@ -29,7 +29,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 // Enable CORS (Frontend: 127.0.0.1:5500)
 app.use(cors({
-  origin: ["http://127.0.0.1:5500", "http://localhost:5500"],
+  origin: ["http://127.0.0.1:5500", "http://localhost:5500", process.env.FRONTEND_URL],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   credentials: true
 }));
@@ -81,5 +81,6 @@ app.get("/admin/dashboard", authMiddleware, (req, res) => {
 
 // Start Server
 sequelize.sync().then(() => {
-  app.listen(PORT, () => console.log(`Server running on http://127.0.0.1:${PORT}`));
+  const HOST = "0.0.0.0";
+  app.listen(PORT, HOST, () => console.log(`Server running on ${HOST}:${PORT}`));
 });
